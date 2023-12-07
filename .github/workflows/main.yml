@@ -13,7 +13,7 @@ env:
 jobs:
   Zefirrat_YandexGpt_Abstractions:
     env:
-      project_name: $base_namespace.Abstractions
+      project_name: Zefirrat.YandexGpt.Abstractions
       version: ${{ github.event.release.tag_name }}
       release_notes: "See https://github.com/Zefirrat/YandexGpt/releases/tag/${{ github.event.release.tag_name }}"
     runs-on: ubuntu-latest
