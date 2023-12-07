@@ -6,7 +6,7 @@ on:
 env:
   base_namespace: Zefirrat.YandexGpt
   authors: "Zefirrat"
-  description: ".Net C# Package. YandexGpt integration"
+  description: \".Net C# Package. YandexGpt integration\"
   links: "https://github.com/Zefirrat/YandexGpt"
   icon_url: "https://avatars.githubusercontent.com/u/37443756?v=4"
   
@@ -15,7 +15,7 @@ jobs:
     env:
       project_name: $base_namespace.Abstractions
       version: ${{ github.event.release.tag_name }}
-      release_notes: "See https://github.com/Zefirrat/YandexGpt/releases/tag/${{ github.event.release.tag_name }}"
+      release_notes: \"See https://github.com/Zefirrat/YandexGpt/releases/tag/${{ github.event.release.tag_name }}\"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
