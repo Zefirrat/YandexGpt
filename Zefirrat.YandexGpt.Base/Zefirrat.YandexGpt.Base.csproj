@@ -10,18 +10,21 @@
         <Description>.Net C# Package. YandexGpt integration.</Description>
         <Configurations>Debug;Release</Configurations>
     </PropertyGroup>
+
+    <PropertyGroup>
+        <TargetFrameworks>netcoreapp3.1;net6.0;net7.0;netstandard2.1</TargetFrameworks>
+    </PropertyGroup>
     
     <PropertyGroup>
-        <TargetFramework>netcoreapp3.1</TargetFramework>
         <ImplicitUsings>disable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <AssemblyName>Zefirrat.YandexGpt.Base</AssemblyName>
         <RootNamespace>Zefirrat.YandexGpt.Base</RootNamespace>
         <LangVersion>8</LangVersion>
     </PropertyGroup>
-
+    
     <ItemGroup>
-      <ProjectReference Include="..\Zefirrat.YandexGpt.Api.Client\Zefirrat.YandexGpt.Api.Client.csproj" />
+      <PackageReference Include="Zefirrat.YandexGpt.Api.Client" Version="1.0.0" />
     </ItemGroup>
 
 </Project>

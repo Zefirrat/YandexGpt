@@ -1,7 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <AssemblyName>Zefirrat.YandexGpt.Abstrtactions</AssemblyName>
         <AssemblyTitle>Zefirrat.YandexGpt.Abstrtactions</AssemblyTitle>
         <PackageIconUrl>https://avatars.githubusercontent.com/u/37443756?v=4</PackageIconUrl>
         <RepositoryUrl>https://github.com/Zefirrat/YandexGpt</RepositoryUrl>
@@ -12,7 +11,7 @@
     </PropertyGroup>
     
     <PropertyGroup>
-        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <TargetFrameworks>netcoreapp3.1;net6.0;net7.0;netstandard2.1</TargetFrameworks>
     </PropertyGroup>
 
 </Project>
