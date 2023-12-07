@@ -13,7 +13,7 @@ env:
 jobs:
   Zefirrat_YandexGpt_Abstractions:
     env:
-      project_name: ${{ env.base_namespace }}.Abstractions
+      project_name: $base_namespace.Abstractions
       version: ${{ github.event.release.tag_name }}
       release_notes: "See https://github.com/Zefirrat/YandexGpt/releases/tag/${{ github.event.release.tag_name }}"
     runs-on: ubuntu-latest
@@ -23,16 +23,14 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: 3.1
-      - name: Build ${{ env.project_name }}
-        run: dotnet build -c Release /p:Version=${{ env.version }} /p:PackageReleaseNotes=${{ env.release_notes }} /p:Authors=${{ env.authors }} /p:PackageDescription=${{ env.description }} /p:Links=${{ env.links }} /p:RepositoryUrl=${{ env.links }} /p:IconUrl=${{ env.icon_url }} /p:Description=${{ env.description }}
-        working-directory: ./${{ env.project_name }}
-      - name: Pack ${{ env.project_name }}
-        run: dotnet pack -c Release /p:Version=${{ env.version }} /p:PackageReleaseNotes=${{ env.release_notes }} /p:Authors=${{ env.authors }} /p:PackageDescription=${{ env.description }} /p:Links=${{ env.links }} /p:RepositoryUrl=${{ env.links }} /p:IconUrl=${{ env.icon_url }} /p:Description=${{ env.description }}
-        working-directory: ./${{ env.project_name }}
-      - name: Upload artifact ${{ env.project_name }}
+      - name: Build $project_name
+        run: dotnet build -c Release /p:Version=$version /p:PackageReleaseNotes=$release_notes /p:Authors=$authors /p:PackageDescription=$description /p:Links=$links /p:RepositoryUrl=$links /p:IconUrl=$icon_url /p:Description=$description $project_name
+      - name: Pack $project_name
+        run: dotnet pack -c Release /p:Version=$version /p:PackageReleaseNotes=$release_notes /p:Authors=$authors /p:PackageDescription=$description /p:Links=$links /p:RepositoryUrl=$links /p:IconUrl=$icon_url /p:Description=$description $project_name
+      - name: Upload artifact $project_name
         uses: actions/upload-artifact@v1
         with:
-          name: ${{ env.project_name }}
-          path: ./${{ env.project_name }}/bin/Release/${{ env.project_name }}.${{ env.version }}.nupkg
-      - name: Publish Nuget ${{ env.project_name }}
-        run: dotnet nuget push ${{ env.project_name }}/bin/Release/${{ env.project_name }}.${{ env.version }}.nupkg --api-key ${{ env.secrets }}.nuget_api_key --source https://api.nuget.org/v3/index.json --no-symbols true
+          name: $project_name
+          path: ./$project_name/bin/Release/$project_name.$version.nupkg
+      - name: Publish Nuget $project_name
+        run: dotnet nuget push $project_name/bin/Release/$project_name.$version.nupkg --api-key $secrets.nuget_api_key --source https://api.nuget.org/v3/index.json --no-symbols true
