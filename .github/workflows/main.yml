@@ -4,8 +4,8 @@ on:
     types: [published]
     env:
       base_namespace: Zefirrat.YandexGpt
-      version: ${{ github.ref_name }}
-      release_notes: "See https://github.com/Zefirrat/YandexGpt/releases/tag/${{ github.ref_name  }}"
+      version: ${{ github_ref }}
+      release_notes: "See https://github.com/Zefirrat/YandexGpt/releases/tag/${{ github_ref  }}"
       authors: "Zefirrat"
       description: ".Net C# Package. YandexGpt integration"
       links: "https://github.com/Zefirrat/YandexGpt"
