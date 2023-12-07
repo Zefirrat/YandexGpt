@@ -16,6 +16,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zefirrat.YandexGpt.Summariz
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zefirrat.YandexGpt.AspNet.Di", "Zefirrat.YandexGpt.AspNet.Di\Zefirrat.YandexGpt.AspNet.Di.csproj", "{9873BCF8-2DED-4224-BD36-B54169C7D07D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{6973EEF8-9ED0-4555-B0BD-10F459BAF463}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.AspNet", "Examples\Example.AspNet\Example.AspNet.csproj", "{60A4BE88-9825-456E-9793-8A2660799977}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,5 +58,12 @@ Global
 		{9873BCF8-2DED-4224-BD36-B54169C7D07D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9873BCF8-2DED-4224-BD36-B54169C7D07D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9873BCF8-2DED-4224-BD36-B54169C7D07D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60A4BE88-9825-456E-9793-8A2660799977}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60A4BE88-9825-456E-9793-8A2660799977}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60A4BE88-9825-456E-9793-8A2660799977}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60A4BE88-9825-456E-9793-8A2660799977}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{60A4BE88-9825-456E-9793-8A2660799977} = {6973EEF8-9ED0-4555-B0BD-10F459BAF463}
 	EndGlobalSection
 EndGlobal
