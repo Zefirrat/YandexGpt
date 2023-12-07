@@ -1,15 +1,24 @@
-> ! Only **russian** language supported
+> ! Only **russian** language supported by destination service
+
+[![Release to NuGet](https://github.com/Zefirrat/YandexGpt/actions/workflows/main.yml/badge.svg)](https://github.com/Zefirrat/YandexGpt/actions/workflows/main.yml)
 
 # Description
 The basis for using existing methods and models of YandexGpt, as well as creating new ones using a ready-made template. There is an API wrapper and data substitution for authorization.
 
 # Installation
-// Todo: add Nugets
+## Nuget
+- [Zefirrat.YandexGpt.Abstractions](https://www.nuget.org/packages/Zefirrat.YandexGpt.Abstractions/)
+- [Zefirrat.YandexGpt.Api.Contracts](https://www.nuget.org/packages/Zefirrat.YandexGpt.Api.Contracts/)
+- [Zefirrat.YandexGpt.Api.Client](https://www.nuget.org/packages/Zefirrat.YandexGpt.Api.Client/)
+- [Zefirrat.YandexGpt.AspNet.Di](https://www.nuget.org/packages/Zefirrat.YandexGpt.AspNet.Di/)
+- [Zefirrat.YandexGpt.Base](https://www.nuget.org/packages/Zefirrat.YandexGpt.Base/)
+- [Zefirrat.YandexGpt.Chatter](https://www.nuget.org/packages/Zefirrat.YandexGpt.Chatter/)
+- [Zefirrat.YandexGpt.Prompter](https://www.nuget.org/packages/Zefirrat.YandexGpt.Prompter/)
+
 
 # Usage
 ## AspNet
-// Todo: add link
-Install [Zefirrat.YandexGpt.AspNet.Di]()
+Install [Zefirrat.YandexGpt.AspNet.Di](https://www.nuget.org/packages/Zefirrat.YandexGpt.AspNet.Di/)
 In `Configure` class add:
 ```csharp
             services.AddYandexGpt(Configuration);
@@ -43,6 +52,34 @@ Then use in controller something like that:
         }
     }
 }
+```
+
+## Configuration
+
+Main config:  
+```json
+  "YandexGptOptions": {
+    "Client": {
+      "AuthenticationScheme": "API-Key",
+      "Token": "*******",
+      "CatalogId":"********"
+    }
+  }
+```
+
+Additionaly can overwrite default urls and methods, without rebuilding and changing source code:  
+```json
+  "YandexGptOptions": {
+    "Client": {
+        // ...
+    },
+  "Overrides": {
+      "LlmBaseUrl": "https://llm.api.cloud.yandex.net/foundationModels/v1/",
+      "OperationBaseUrl": "https://operation.api.cloud.yandex.net/operations/",
+      "Completion": "completion",
+      "CompletionAsync": "completionAsync",
+    }
+  }
 ```
 
 # Example
