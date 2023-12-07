@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    
+    <PropertyGroup>
+        <AssemblyName>Zefirrat.YandexGpt.Chatter</AssemblyName>
+        <AssemblyTitle>Zefirrat.YandexGpt.Chatter</AssemblyTitle>
+        <PackageIconUrl>https://avatars.githubusercontent.com/u/37443756?v=4</PackageIconUrl>
+        <RepositoryUrl>https://github.com/Zefirrat/YandexGpt</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/Zefirrat/YandexGpt</PackageProjectUrl>
+        <PackageTags>Yandex Gpt Chat YandexGpt ChatGpt Cloud Api YandexApi YandexGptApi</PackageTags>
+        <Description>.Net C# Package. YandexGpt integration.</Description>
+        <Configurations>Debug;Release</Configurations>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Zefirrat.YandexGpt.Abstractions\Zefirrat.YandexGpt.Abstractions.csproj" />
+      <ProjectReference Include="..\Zefirrat.YandexGpt.Base\Zefirrat.YandexGpt.Base.csproj" />
+    </ItemGroup>
+
+</Project>
