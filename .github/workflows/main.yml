@@ -28,7 +28,7 @@ jobs:
       - name: Pack $project_name
         run: dotnet pack -c Release /p:Version=$version /p:PackageReleaseNotes="$release_notes" /p:Authors=$authors /p:PackageDescription="$description" /p:Links="$links" /p:RepositoryUrl="$links" /p:IconUrl=$icon_url /p:Description="$description" $project_name
       - name: Publish Nuget $project_name
-        run: dotnet nuget push $project_name/bin/Release/$project_name.$version.nupkg --api-key ${{ secrets.nuget_api_key }} --source https://api.nuget.org/v3/index.json --no-symbols true
+        run: dotnet nuget push $project_name/bin/Release/$project_name.$version.nupkg --api-key ${{ secrets.nuget_api_key }} --source https://api.nuget.org/v3/index.json --no-symbols
         
   Zefirrat_YandexGpt_Api_Contracts:
     env:
@@ -47,7 +47,7 @@ jobs:
       - name: Pack $project_name
         run: dotnet pack -c Release /p:Version=$version /p:PackageReleaseNotes="$release_notes" /p:Authors=$authors /p:PackageDescription="$description" /p:Links="$links" /p:RepositoryUrl="$links" /p:IconUrl=$icon_url /p:Description="$description" $project_name
       - name: Publish Nuget $project_name
-        run: dotnet nuget push $project_name/bin/Release/$project_name.$version.nupkg --api-key ${{ secrets.nuget_api_key }} --source https://api.nuget.org/v3/index.json --no-symbols true
+        run: dotnet nuget push $project_name/bin/Release/$project_name.$version.nupkg --api-key ${{ secrets.nuget_api_key }} --source https://api.nuget.org/v3/index.json --no-symbols
         
   Zefirrat_YandexGpt_Api_Client:
     env:
@@ -66,7 +66,7 @@ jobs:
       - name: Pack $project_name
         run: dotnet pack -c Release /p:Version=$version /p:PackageReleaseNotes="$release_notes" /p:Authors=$authors /p:PackageDescription="$description" /p:Links="$links" /p:RepositoryUrl="$links" /p:IconUrl=$icon_url /p:Description="$description" $project_name
       - name: Publish Nuget $project_name
-        run: dotnet nuget push $project_name/bin/Release/$project_name.$version.nupkg --api-key ${{ secrets.nuget_api_key }} --source https://api.nuget.org/v3/index.json --no-symbols true
+        run: dotnet nuget push $project_name/bin/Release/$project_name.$version.nupkg --api-key ${{ secrets.nuget_api_key }} --source https://api.nuget.org/v3/index.json --no-symbols
         
   Zefirrat_YandexGpt_Base:
     env:
@@ -85,7 +85,7 @@ jobs:
       - name: Pack $project_name
         run: dotnet pack -c Release /p:Version=$version /p:PackageReleaseNotes="$release_notes" /p:Authors=$authors /p:PackageDescription="$description" /p:Links="$links" /p:RepositoryUrl="$links" /p:IconUrl=$icon_url /p:Description="$description" $project_name
       - name: Publish Nuget $project_name
-        run: dotnet nuget push $project_name/bin/Release/$project_name.$version.nupkg --api-key ${{ secrets.nuget_api_key }} --source https://api.nuget.org/v3/index.json --no-symbols true
+        run: dotnet nuget push $project_name/bin/Release/$project_name.$version.nupkg --api-key ${{ secrets.nuget_api_key }} --source https://api.nuget.org/v3/index.json --no-symbols
         
   Zefirrat_YandexGpt_Prompter:
     env:
@@ -104,7 +104,7 @@ jobs:
       - name: Pack $project_name
         run: dotnet pack -c Release /p:Version=$version /p:PackageReleaseNotes="$release_notes" /p:Authors=$authors /p:PackageDescription="$description" /p:Links="$links" /p:RepositoryUrl="$links" /p:IconUrl=$icon_url /p:Description="$description" $project_name
       - name: Publish Nuget $project_name
-        run: dotnet nuget push $project_name/bin/Release/$project_name.$version.nupkg --api-key ${{ secrets.nuget_api_key }} --source https://api.nuget.org/v3/index.json --no-symbols true
+        run: dotnet nuget push $project_name/bin/Release/$project_name.$version.nupkg --api-key ${{ secrets.nuget_api_key }} --source https://api.nuget.org/v3/index.json --no-symbols
         
   Zefirrat_YandexGpt_Chatter:
     env:
@@ -123,7 +123,7 @@ jobs:
       - name: Pack $project_name
         run: dotnet pack -c Release /p:Version=$version /p:PackageReleaseNotes="$release_notes" /p:Authors=$authors /p:PackageDescription="$description" /p:Links="$links" /p:RepositoryUrl="$links" /p:IconUrl=$icon_url /p:Description="$description" $project_name
       - name: Publish Nuget $project_name
-        run: dotnet nuget push $project_name/bin/Release/$project_name.$version.nupkg --api-key ${{ secrets.nuget_api_key }} --source https://api.nuget.org/v3/index.json --no-symbols true
+        run: dotnet nuget push $project_name/bin/Release/$project_name.$version.nupkg --api-key ${{ secrets.nuget_api_key }} --source https://api.nuget.org/v3/index.json --no-symbols
         
   Zefirrat_YandexGpt_Summarizer:
     env:
@@ -142,7 +142,7 @@ jobs:
       - name: Pack $project_name
         run: dotnet pack -c Release /p:Version=$version /p:PackageReleaseNotes="$release_notes" /p:Authors=$authors /p:PackageDescription="$description" /p:Links="$links" /p:RepositoryUrl="$links" /p:IconUrl=$icon_url /p:Description="$description" $project_name
       - name: Publish Nuget $project_name
-        run: dotnet nuget push $project_name/bin/Release/$project_name.$version.nupkg --api-key ${{ secrets.nuget_api_key }} --source https://api.nuget.org/v3/index.json --no-symbols true
+        run: dotnet nuget push $project_name/bin/Release/$project_name.$version.nupkg --api-key ${{ secrets.nuget_api_key }} --source https://api.nuget.org/v3/index.json --no-symbols
 
   Zefirrat_YandexGpt_AspNet_Di:
     env:
@@ -161,4 +161,4 @@ jobs:
       - name: Pack $project_name
         run: dotnet pack -c Release /p:Version=$version /p:PackageReleaseNotes="$release_notes" /p:Authors=$authors /p:PackageDescription="$description" /p:Links="$links" /p:RepositoryUrl="$links" /p:IconUrl=$icon_url /p:Description="$description" $project_name
       - name: Publish Nuget $project_name
-        run: dotnet nuget push $project_name/bin/Release/$project_name.$version.nupkg --api-key ${{ secrets.nuget_api_key }} --source https://api.nuget.org/v3/index.json --no-symbols true
+        run: dotnet nuget push $project_name/bin/Release/$project_name.$version.nupkg --api-key ${{ secrets.nuget_api_key }} --source https://api.nuget.org/v3/index.json --no-symbols
