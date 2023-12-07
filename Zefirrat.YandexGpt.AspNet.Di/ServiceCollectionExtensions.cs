@@ -14,6 +14,7 @@ namespace Zefirrat.YandexGpt.AspNet.Di
     {
         public static IServiceCollection AddYandexGpt(
             this IServiceCollection serviceCollection,
+            IConfiguration configuration,
             bool useDefaultConfiguration = true)
         {
             serviceCollection.AddHttpClient(nameof(YaClient));
@@ -24,11 +25,10 @@ namespace Zefirrat.YandexGpt.AspNet.Di
 
             if (useDefaultConfiguration)
             {
-                var configuration = serviceCollection.BuildServiceProvider()
-                    .GetRequiredService<IConfiguration>();
-                serviceCollection.Configure<YandexGptOptions>(configuration.GetSection(nameof(YandexGptOptions)));
-                serviceCollection.Configure<YaClientOptions>(configuration.GetSection(nameof(YandexGptOptions))
-                    .GetSection(nameof(YaClientOptions)));
+                serviceCollection.AddOptions();
+                serviceCollection.Configure<YandexGptOptions>(opt => configuration.GetSection(nameof(YandexGptOptions)).Bind(opt));
+                serviceCollection.Configure<YaClientOptions>(opt=> configuration.GetSection(nameof(YandexGptOptions))
+                    .GetSection(nameof(YandexGptOptions.Client)).Bind(opt));
             }
 
             return serviceCollection;
