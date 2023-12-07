@@ -22,9 +22,9 @@
         <RootNamespace>Zefirrat.YandexGpt.Base</RootNamespace>
         <LangVersion>8</LangVersion>
     </PropertyGroup>
-
+    
     <ItemGroup>
-      <ProjectReference Include="..\Zefirrat.YandexGpt.Api.Client\Zefirrat.YandexGpt.Api.Client.csproj" />
+      <PackageReference Include="Zefirrat.YandexGpt.Api.Client" Version="1.0.0" />
     </ItemGroup>
 
 </Project>

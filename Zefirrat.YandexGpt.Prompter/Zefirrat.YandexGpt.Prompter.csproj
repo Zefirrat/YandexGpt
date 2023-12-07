@@ -21,13 +21,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Zefirrat.YandexGpt.Abstractions\Zefirrat.YandexGpt.Abstractions.csproj" />
-      <ProjectReference Include="..\Zefirrat.YandexGpt.Base\Zefirrat.YandexGpt.Base.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\Zefirrat.YandexGpt.Abstractions\Zefirrat.YandexGpt.Abstractions.csproj" />
-      <ProjectReference Include="..\Zefirrat.YandexGpt.Base\Zefirrat.YandexGpt.Base.csproj" />
+      <PackageReference Include="Zefirrat.YandexGpt.Abstractions" Version="1.0.0" />
+      <PackageReference Include="Zefirrat.YandexGpt.Base" Version="1.0.0" />
     </ItemGroup>
 
 </Project>

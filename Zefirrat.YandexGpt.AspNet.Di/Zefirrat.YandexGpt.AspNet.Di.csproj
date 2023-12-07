@@ -20,14 +20,11 @@
       <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0" />
       <PackageReference Include="Microsoft.Extensions.Http" Version="8.0.0" />
       <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="8.0.0" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\Zefirrat.YandexGpt.Abstractions\Zefirrat.YandexGpt.Abstractions.csproj" />
-      <ProjectReference Include="..\Zefirrat.YandexGpt.Api.Client\Zefirrat.YandexGpt.Api.Client.csproj" />
-      <ProjectReference Include="..\Zefirrat.YandexGpt.Chatter\Zefirrat.YandexGpt.Chatter.csproj" />
-      <ProjectReference Include="..\Zefirrat.YandexGpt.Prompter\Zefirrat.YandexGpt.Prompter.csproj" />
-      <ProjectReference Include="..\Zefirrat.YandexGpt.Summarizer\Zefirrat.YandexGpt.Summarizer.csproj" />
+      <PackageReference Include="Zefirrat.YandexGpt.Abstractions" Version="1.0.0" />
+      <PackageReference Include="Zefirrat.YandexGpt.Api.Client" Version="1.0.0" />
+      <PackageReference Include="Zefirrat.YandexGpt.Chatter" Version="1.0.0" />
+      <PackageReference Include="Zefirrat.YandexGpt.Prompter" Version="1.0.0" />
+      <PackageReference Include="Zefirrat.YandexGpt.Summarizer" Version="1.0.0" />
     </ItemGroup>
 
 </Project>

@@ -16,15 +16,12 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Zefirrat.YandexGpt.Api.Contracts\Zefirrat.YandexGpt.Api.Contracts.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
       <PackageReference Include="Microsoft.Extensions.Http" Version="8.0.0" />
       <PackageReference Include="Microsoft.Extensions.Options" Version="8.0.0" />
       <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
       <PackageReference Include="System.Net.Http.Json" Version="8.0.0" />
       <PackageReference Include="System.Text.Json" Version="8.0.0" />
+      <PackageReference Include="Zefirrat.YandexGpt.Api.Contracts" Version="1.0.0" />
     </ItemGroup>
 
 </Project>
