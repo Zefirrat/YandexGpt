@@ -12,7 +12,7 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <TargetFrameworks>netcoreapp3.1;net6.0;net7.0;netstandard2.1</TargetFrameworks>
     </PropertyGroup>
 
     <ItemGroup>
@@ -24,6 +24,7 @@
       <PackageReference Include="Microsoft.Extensions.Options" Version="8.0.0" />
       <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
       <PackageReference Include="System.Net.Http.Json" Version="8.0.0" />
+      <PackageReference Include="System.Text.Json" Version="8.0.0" />
     </ItemGroup>
 
 </Project>
