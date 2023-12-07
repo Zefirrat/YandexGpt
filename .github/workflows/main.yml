@@ -4,8 +4,6 @@ on:
     types: [published]
     env:
       base_namespace: Zefirrat.YandexGpt
-      version: ${{ github.event.release.tag_name }}
-      release_notes: "See https://github.com/Zefirrat/YandexGpt/releases/tag/${{ github.event.release.tag_name }}"
       authors: "Zefirrat"
       description: ".Net C# Package. YandexGpt integration"
       links: "https://github.com/Zefirrat/YandexGpt"
@@ -14,6 +12,8 @@ jobs:
   Zefirrat_YandexGpt_Abstractions:
     env:
       project_name: ${{base_namespace}}.Abstractions
+      version: ${{ github.event.release.tag_name }}
+      release_notes: "See https://github.com/Zefirrat/YandexGpt/releases/tag/${{ github.event.release.tag_name }}"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
