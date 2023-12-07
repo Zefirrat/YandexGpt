@@ -27,10 +27,5 @@ jobs:
         run: dotnet build -c Release /p:Version=$version /p:PackageReleaseNotes="$release_notes" /p:Authors=$authors /p:PackageDescription="$description" /p:Links="$links" /p:RepositoryUrl="$links" /p:IconUrl=$icon_url /p:Description="$description" $project_name
       - name: Pack $project_name
         run: dotnet pack -c Release /p:Version=$version /p:PackageReleaseNotes="$release_notes" /p:Authors=$authors /p:PackageDescription="$description" /p:Links="$links" /p:RepositoryUrl="$links" /p:IconUrl=$icon_url /p:Description="$description" $project_name
-      - name: Upload artifact $project_name
-        uses: actions/upload-artifact@v1
-        with:
-          name: $project_name
-          path: ./$project_name/bin/Release/$project_name.$version.nupkg
       - name: Publish Nuget $project_name
         run: dotnet nuget push $project_name/bin/Release/$project_name.$version.nupkg --api-key ${{ secrets.nuget_api_key }} --source https://api.nuget.org/v3/index.json --no-symbols true
