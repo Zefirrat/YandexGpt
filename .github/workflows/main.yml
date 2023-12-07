@@ -1,0 +1,36 @@
+name: Release to NuGet
+on:
+  release:
+    types: [published]
+    env:
+      base_namespace: Zefirrat.YandexGpt
+      version: ${{ github.event.release.tag_name }}
+      release_notes: "See https://github.com/Zefirrat/YandexGpt/releases/tag/${{ github.event.release.tag_name }}"
+      authors: "Zefirrat"
+      description: ".Net C# Package. YandexGpt integration"
+      links: "https://github.com/Zefirrat/YandexGpt"
+      icon_url: "https://avatars.githubusercontent.com/u/37443756?v=4"
+jobs:
+  Zefirrat_YandexGpt_Abstractions:
+    env:
+      project_name: ${{base_namespace}}.Abstractions
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 3.1
+      - name: Build $project_name
+        run: dotnet build -c Release /p:Version=$version /p:PackageReleaseNotes=$release_notes /p:Authors=$authors /p:PackageDescription=$description /p:Links=$links /p:RepositoryUrl=$links /p:IconUrl=$icon_url /p:Description=$description
+        working-directory: ./$project_name
+      - name: Pack $project_name
+        run: dotnet pack -c Release /p:Version=$version /p:PackageReleaseNotes=$release_notes /p:Authors=$authors /p:PackageDescription=$description /p:Links=$links /p:RepositoryUrl=$links /p:IconUrl=$icon_url /p:Description=$description
+        working-directory: ./$project_name
+      - name: Upload artifact $project_name
+        uses: actions/upload-artifact@v1
+        with:
+          name: $project_name
+          path: ./${{project_name}}/bin/Release/${{project_name}}.${{ github.event.release.tag_name }}.nupkg
+      - name: Publish Nuget $project_name
+        run: dotnet nuget push ${{$project_name}}/bin/Release/${{$project_name}}.${{ github.event.release.tag_name }}.nupkg --api-key ${{ secrets.nuget_api_key }} --source https://api.nuget.org/v3/index.json --no-symbols true
