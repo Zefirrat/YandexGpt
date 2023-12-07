@@ -10,10 +10,12 @@ namespace Example.AspNet.Controllers
     public class YandexGptController : Controller
     {
         private readonly IYaSummarizer _summarizer;
+        private readonly IYaPrompter _prompter;
 
-        public YandexGptController(IYaSummarizer summarizer)
+        public YandexGptController(IYaSummarizer summarizer, IYaPrompter prompter)
         {
             _summarizer = summarizer;
+            _prompter = prompter;
         }
 
         [HttpPost]
@@ -21,6 +23,13 @@ namespace Example.AspNet.Controllers
         public async Task<IActionResult> Summarize([FromBody] string text)
         {
             return Ok(await _summarizer.SendAsync(text));
+        }
+        
+        [HttpPost]
+        [Route("[action]")]
+        public async Task<IActionResult> Prompt([FromBody] string text)
+        {
+            return Ok(await _prompter.SendAsync(text));
         }
     }
 }
