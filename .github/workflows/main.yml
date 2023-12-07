@@ -11,7 +11,7 @@ on:
 jobs:
   Zefirrat_YandexGpt_Abstractions:
     env:
-      project_name: ${{base_namespace}}.Abstractions
+      project_name: $base_namespace.Abstractions
       version: ${{ github.event.release.tag_name }}
       release_notes: "See https://github.com/Zefirrat/YandexGpt/releases/tag/${{ github.event.release.tag_name }}"
     runs-on: ubuntu-latest
@@ -31,6 +31,6 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
           name: $project_name
-          path: ./${{project_name}}/bin/Release/${{project_name}}.${{ version }}.nupkg
+          path: ./$project_name/bin/Release/$project_name.$version.nupkg
       - name: Publish Nuget $project_name
-        run: dotnet nuget push ${{$project_name}}/bin/Release/${{$project_name}}.${{ version }}.nupkg --api-key ${{ secrets.nuget_api_key }} --source https://api.nuget.org/v3/index.json --no-symbols true
+        run: dotnet nuget push $project_name/bin/Release/$project_name.$version.nupkg --api-key $secrets.nuget_api_key --source https://api.nuget.org/v3/index.json --no-symbols true
