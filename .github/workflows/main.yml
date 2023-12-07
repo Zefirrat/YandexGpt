@@ -5,10 +5,10 @@ on:
     
 env:
   base_namespace: Zefirrat.YandexGpt
-  authors: "Zefirrat"
+  authors: \"Zefirrat\"
   description: \".Net C# Package. YandexGpt integration\"
-  links: "https://github.com/Zefirrat/YandexGpt"
-  icon_url: "https://avatars.githubusercontent.com/u/37443756?v=4"
+  links: \"https://github.com/Zefirrat/YandexGpt\"
+  icon_url: \"https://avatars.githubusercontent.com/u/37443756?v=4\"
   
 jobs:
   Zefirrat_YandexGpt_Abstractions:
