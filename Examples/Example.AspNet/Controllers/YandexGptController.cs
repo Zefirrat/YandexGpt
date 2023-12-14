@@ -31,5 +31,12 @@ namespace Example.AspNet.Controllers
         {
             return Ok(await _prompter.SendAsync(text));
         }
+        
+        [HttpPost]
+        [Route("[action]")]
+        public async Task<IActionResult> PromptToken([FromBody] (string Message, int Token) text)
+        {
+            return Ok(await _prompter.SendAsync(text.Message, text.Token));
+        }
     }
 }

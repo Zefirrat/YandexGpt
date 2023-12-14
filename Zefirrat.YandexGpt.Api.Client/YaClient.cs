@@ -56,7 +56,12 @@ namespace Zefirrat.YandexGpt.Api.Client
             var method = LlmBaseUrl + Completion;
             using var responseMessage =
                 await _httpClient.SendAsync(CreateRequestMessage(request, method), cancellationToken);
-            responseMessage.EnsureSuccessStatusCode();
+
+            if (!responseMessage.IsSuccessStatusCode)
+            {
+                throw new Exception(await responseMessage.Content.ReadAsStringAsync());
+            }
+            
             var response = await GetBody<Response>(responseMessage);
             return response;
         }
@@ -69,7 +74,12 @@ namespace Zefirrat.YandexGpt.Api.Client
             var method = LlmBaseUrl + CompletionAsync;
             using var responseMessage =
                 await _httpClient.SendAsync(CreateRequestMessage(request, method), cancellationToken);
-            responseMessage.EnsureSuccessStatusCode();
+
+            if (!responseMessage.IsSuccessStatusCode)
+            {
+                throw new Exception(await responseMessage.Content.ReadAsStringAsync());
+            }
+            
             var response = await GetBody<DetachedOperation>(responseMessage);
             return response;
         }
@@ -81,7 +91,12 @@ namespace Zefirrat.YandexGpt.Api.Client
             var method = OperationBaseUrl + operationId;
             using var responseMessage =
                 await _httpClient.SendAsync(CreateRequestMessage(null, method), cancellationToken);
-            responseMessage.EnsureSuccessStatusCode();
+
+            if (!responseMessage.IsSuccessStatusCode)
+            {
+                throw new Exception(await responseMessage.Content.ReadAsStringAsync());
+            }
+            
             var response = await GetBody<OperationInfo>(responseMessage);
             return response;
         }
