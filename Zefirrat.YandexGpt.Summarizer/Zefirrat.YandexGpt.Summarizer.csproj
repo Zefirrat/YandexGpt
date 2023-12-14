@@ -16,8 +16,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Zefirrat.YandexGpt.Abstractions" Version="1.0.0" />
-      <PackageReference Include="Zefirrat.YandexGpt.Base" Version="1.0.0" />
+      <PackageReference Include="Zefirrat.YandexGpt.Abstractions" Version="1.1.0-pre1" />
+      <PackageReference Include="Zefirrat.YandexGpt.Base" Version="1.1.0-pre1" />
     </ItemGroup>
 
 </Project>
